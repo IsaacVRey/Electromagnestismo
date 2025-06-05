@@ -1,5 +1,6 @@
 function campo()
-    global pos_x pos_y pos_z vec_x vec_y  num_espiras puntos_por_espira
+    global pos_x pos_y pos_z vec_x vec_y num_espiras puntos_por_espira
+    global campo_magnitud_linea campo_z_linea eje_z
 
     corriente = 300;
     mu0 = 4*pi*1e-7;
@@ -9,7 +10,7 @@ function campo()
     paso_espacio = 0.1;
     eje_x = -5:paso_espacio:5;
     eje_y = eje_x;
-    eje_z = eje_x;
+    eje_z = -10:paso_espacio:10;  % <<< más grande eje_z
     len_x = length(eje_x);
     len_y = length(eje_y);
     len_z = length(eje_z);
@@ -45,6 +46,16 @@ function campo()
     campo_x_xz = squeeze(campo_x(:, plano_medio_y, :));
     campo_z_xz = squeeze(campo_z(:, plano_medio_y, :));
     campo_magnitud_xz = squeeze(magnitud_campo(:, plano_medio_y, :));
+
+    % Línea de Bz (CORRECTO para la trayectoria)
+    campo_z_linea = squeeze(campo_z(round(len_x/2), round(len_y/2), :));
+
+ 
+    campo_magnitud_linea = squeeze(campo_magnitud_xz(round(len_x/2), :));
+
+    assignin('base', 'campo_z_linea', campo_z_linea);
+    assignin('base', 'campo_magnitud_linea', campo_magnitud_linea);
+    assignin('base', 'eje_z', eje_z);
 
     % Visualización
     figure(2); clf
