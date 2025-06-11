@@ -13,4 +13,4 @@ espiral();
 campo();
 
 %Ejecutar tryectoria
-tryectoria();
+Runge_kuta(); 
