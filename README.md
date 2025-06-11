@@ -10,5 +10,9 @@ Una vez que se tiene el campo, la función que simula la trayectoria del dipolo 
 
 El resultado de esta simulación es una gráfica que muestra la posición del dipolo a lo largo del tiempo. Se comparan dos trayectorias: una donde el dipolo cae bajo la influencia del campo magnético, y otra donde simplemente cae libremente (sin campo magnético). Si el campo magnético es fuerte en cierta zona, se puede ver cómo el dipolo es frenado o incluso queda flotando un tiempo antes de seguir cayendo.
 
+Nueva parte:
+Tambien agregamos la simulacion donde vemos como el sistema de frenos funciona y tambien agregamos un mejor metodo de simulacion el cual fue con Range Kuta para tener una mejor precision a la hora del freno 
+
+
 En resumen, el código une tres ideas clave: cómo se genera un campo magnético a partir de corrientes (ley de Biot-Savart), cómo un dipolo responde a un campo magnético que cambia con la posición, y cómo se calcula el movimiento de un objeto a través de un campo usando física básica (posición, velocidad, aceleración). El resultado es una simulación que muestra claramente cómo el campo del solenoide puede modificar la caída del dipolo.
 
